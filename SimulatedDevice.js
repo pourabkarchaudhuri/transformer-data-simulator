@@ -205,7 +205,7 @@ function sendMessage2(){
   // var temperature = 20 + (Math.random() * 15);
   // var temperature = Math.floor(Math.random() * (105 - 80 + 1)) + 80;
   var message = new Message(JSON.stringify({
-    temperature: 100,
+    temperature: 100, //THIS SHOULD BE REALTIME FROM UI
   }));
 
   // Add a custom application property to the message.
@@ -231,7 +231,7 @@ function sendMessage3(){
   // var temperature = 20 + (Math.random() * 15);
   // var primaryVoltage = (Math.random() * (480 - 478 + 1)) + 478;
   var message = new Message(JSON.stringify({
-    primaryVoltage: 11000,
+    primaryVoltage: 11000, //THIS SHOULD BE REALTIME FROM UI
     // pressure: 0
   }));
 
