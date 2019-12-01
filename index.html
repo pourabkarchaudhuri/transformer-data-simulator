@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Transformer Data Simulator</title>
+
+    <!-- Bootstrap -->
+    
+    <!-- Font Awesome -->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"> -->
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet"> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.2/rangeslider.css" rel="stylesheet">
+    <link href="styles/slider.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/toggle.css">
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.2/rangeslider.js"></script>
+  
+    
+  </head>
+  <body style="background:black; color: white;">
+    
+  <div class="row text-center center-block" style="align-items: center; justify-content: center;">
+          <h1 style="color:white; font-family: sans-serif; font-weight: 100;">3Φ Step-Down Distribution Transformer</h1>
+  </div>
+  
+
+    <div class="container" style="margin-top:50px;">
+            <div class="row">
+              <div class="col-md-6">
+                    <img src="/images/Liquid_Level_Transformer.png" alt="Transformer View">
+                    <!-- <img style="filter: invert(0.70); margin-left: 150px;" src="/images/circuit.png" alt="Circuit"> -->
+              </div>
+              <div class="col-md-6">
+                <div>
+                  <div style="margin-bottom: 50px; margin-top:20px;">
+                      <h6>Switch on/off all sensors</h6>
+                      <div class="toggle-btn">
+                        <input type="checkbox" class="cb-value" />
+                        <span class="round-btn"></span>
+                    </div>
+                  </div>
+                  <div style="margin-bottom: 50px;">
+                      <h6>Set Operational Temperature</h6>
+                      <div class="range-slider">
+                          <input id="feeder2" class="range-slider__range" type="range" value="100" min="0" max="500">
+                          <span class="range-slider__value">0</span>
+                      </div>
+                  </div>
+                  <div>
+                      <h6>Set Primary Line Voltage</h6>
+                      <div class="range-slider">
+                        <input id="feeder3" class="range-slider__range" type="range" value="11000" min="0" max="15000">
+                        <span class="range-slider__value">0</span>
+                      </div>
+                  </div>
+                </div>
+              </div>
+    </div>
+    
+</div>
+    
+    
+  <!-- JQuery -->
+  <script type="text/javascript" src="scripts/slider.js"></script>
+  <script type="text/javascript" src="scripts/toggleSwitch.js"></script>
+</body>
+</html>
