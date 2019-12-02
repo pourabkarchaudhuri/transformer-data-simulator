@@ -8,7 +8,9 @@ $('.cb-value').click(function() {
         dataType: "JSON",
         url: '/sensorswitch',
         data: {
-            switch: true
+            switch: true,
+            feeder2: document.getElementById('f2').innerText,
+            feeder3: document.getElementById('f3').innerText
             // dbconnection: true
         },
         success: function (response) {

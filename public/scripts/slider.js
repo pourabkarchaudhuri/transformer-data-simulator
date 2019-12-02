@@ -182,30 +182,32 @@ var rangeSlider = function(){
 
       clearTimeout(sendValue);
 
-      sendValue = setTimeout(() => {
-      // Make a call to server to clear the previous interval for feeder
-      // and start a interval using this value
-      $.ajax({
-        type: "POST",
-        dataType: "JSON",
-        url: '/changeFeederValue',
-        data: {
-          name: this.id,
-          value: $(this).next(value).html(this.value)[0].textContent
-            // dbconnection: true
-        },
-        success: function (response) {
-            console.log("Response module: " + JSON.stringify(response))
-
-            if (response.error_status == false) {
-                alert('Sry you have an error')
+      if ($('.toggle-btn').find('input.cb-value').is(':checked')) {
+        sendValue = setTimeout(() => {
+          // Make a call to server to clear the previous interval for feeder
+          // and start a interval using this value
+          $.ajax({
+            type: "POST",
+            dataType: "JSON",
+            url: '/changeFeederValue',
+            data: {
+              name: this.id,
+              value: $(this).next(value).html(this.value)[0].textContent
+                // dbconnection: true
+            },
+            success: function (response) {
+                console.log("Response module: " + JSON.stringify(response))
+    
+                if (response.error_status == false) {
+                    alert('Sry you have an error')
+                }
+                else {
+                    console.log("Response module" + response)
+                }
             }
-            else {
-                console.log("Response module" + response)
-            }
-        }
-    })
-    }, 4000);
+        })
+        }, 4000);
+      }
 
 
       // console.log($(this).html);

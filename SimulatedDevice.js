@@ -200,12 +200,12 @@ function sendMessage(){
 }
 
 // Send a telemetry message to your hub
-function sendMessage2(){
+function sendMessage2(temp){
   // Simulate telemetry.
   // var temperature = 20 + (Math.random() * 15);
   // var temperature = Math.floor(Math.random() * (105 - 80 + 1)) + 80;
   var message = new Message(JSON.stringify({
-    temperature: 100, //THIS SHOULD BE REALTIME FROM UI
+    temperature: temp, //THIS SHOULD BE REALTIME FROM UI
   }));
 
   // Add a custom application property to the message.
@@ -226,12 +226,12 @@ function sendMessage2(){
 
 // feeder 3
 // Send a telemetry message to your hub
-function sendMessage3(){
+function sendMessage3(pVoltage){
   // Simulate telemetry.
   // var temperature = 20 + (Math.random() * 15);
   // var primaryVoltage = (Math.random() * (480 - 478 + 1)) + 478;
   var message = new Message(JSON.stringify({
-    primaryVoltage: 11000, //THIS SHOULD BE REALTIME FROM UI
+    primaryVoltage: pVoltage, //THIS SHOULD BE REALTIME FROM UI
     // pressure: 0
   }));
 
@@ -299,11 +299,11 @@ module.exports = {
     intervalLoop = setInterval(sendMessage, 1000);
   },
 
-  switchOnOff: function(status) {
-    if(status === 'true') {
+  switchOnOff: function(body) {
+    if(body.switch === 'true') {
       intervalLoop = setInterval(sendMessage, 1000);
-      intervalLoop2 = setInterval(sendMessage2, 1000);
-      intervalLoop3 = setInterval(sendMessage3, 1000);
+      intervalLoop2 = setInterval(() => sendMessage2(body.feeder2), 1000);
+      intervalLoop3 = setInterval(() => sendMessage3(body.feeder3), 1000);
       intervalLoop4 = setInterval(sendMessage4, 1000);
     } else {
       clearInterval(intervalLoop);

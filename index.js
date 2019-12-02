@@ -23,12 +23,14 @@ app.post('/sensorswitch', (req, res)=>{
     // res.sendFile(path.join(__dirname, 'index.html'))
     // simulated.simulate();
     // console.log(req.body);
-    simulated.switchOnOff(req.body.switch);
+    simulated.switchOnOff(req.body);
+    res.end('switched');
 })
 
 app.post('/changeFeederValue', (req, res) => {
     console.log(req.body);
     simulated.changeFeederValues(req.body);
+    res.end('feeder changed');
 })
 
 app.listen(port)
