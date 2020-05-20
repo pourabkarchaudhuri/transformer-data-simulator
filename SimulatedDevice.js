@@ -16,10 +16,10 @@ const chalk = require('chalk');
 //
 // Using the Azure CLI:
 // az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyNodeDevice --output table
-var connectionString = 'HostName=iothubbridge.azure-devices.net;DeviceId=feeder-1;SharedAccessKey=QNfCzbqYqaU4/jzT5UruCyVvIPSsXfkNs9Ft3jsedLQ=';
-var connectionString2 = 'HostName=iothubbridge.azure-devices.net;DeviceId=feeder2;SharedAccessKey=rZSfX985j8y5ox2kwjCMoPvH0RdQMvXro8oRhndckXY=';
-var connectionString3 = 'HostName=iothubbridge.azure-devices.net;DeviceId=feeder-3;SharedAccessKey=A02sC9tXDcEGsSCHBa2e9BoFk1Y/YNicfr8okFvrL30=';
-var connectionString4 = 'HostName=iothubbridge.azure-devices.net;DeviceId=feeder-4;SharedAccessKey=u95/RxsBxP3V09HYIm+QVE1Irv8KTA+kbhAQkCaref4=';
+var connectionString = 'KEY1';
+var connectionString2 = 'KEY2';
+var connectionString3 = 'KEY3';
+var connectionString4 = 'KEY4';
 
 // Using the Node.js Device SDK for IoT Hub:
 //   https://github.com/Azure/azure-iot-sdk-node
